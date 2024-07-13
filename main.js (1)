@@ -1,0 +1,65 @@
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    
+const swiper = new Swiper('.swiper', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+    
+    
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: true,
+    });
+    
+    
+    AOS.init();
+    
+window.onload = function() {
+        
+        setTimeout(function() {
+            document.querySelector('.preloader').style.display = 'none';
+        }, 3000); 
+    
+    };
+
+        
+  function showSwalAlert() {
+  Swal.fire({
+    title: 'Artificial intelligence',
+    html: `
+        <p>This website is completely open source and the source code is available on my github account.Visit if you like<br>  <a href='https://github.com/DevKumar57-67'>My Github</a>.</p>
+    `,
+    showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+    }
+});
+
+}
+
+
+
+
+setTimeout(showSwalAlert, 3000);
+        
